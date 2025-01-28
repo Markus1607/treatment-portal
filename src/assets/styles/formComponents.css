@@ -1,0 +1,355 @@
+.radioButtons {
+  @apply flex flex-col text-black text-sm space-y-3;
+
+  .labelWrapper {
+    @apply flex content-center items-center justify-start font-normal;
+
+    .checkLabel {
+      @apply block text-left text-black;
+    }
+
+    .subClass {
+      @apply flex-shrink-0 m-0 pl-1 text-left text-black-light italic font-light;
+    }
+  }
+}
+
+.radioBoxContainer {
+  @apply flex gap-12 items-center mt-1 text-gray;
+
+  .items {
+    @apply flex content-center items-center justify-center cursor-pointer;
+  }
+
+  p {
+    @apply self-center m-auto mb-0 ml-1 text-center text-black-light text-sm;
+  }
+
+  input[type='radio'] {
+    @apply w-[23px] h-[22px] m-auto mr-1 text-blue border-2 border-gray rounded-full outline-none appearance-none cursor-pointer;
+
+    &::before {
+      content: '';
+      display: none;
+    }
+  }
+
+  input[type='radio']:checked {
+    @apply border-2 border-blue;
+
+    &::before {
+      @apply relative block w-full h-full bg-blue border-blue rounded-full scale-75;
+      content: '';
+    }
+  }
+
+  input[type='radio']:checked + p {
+    @apply text-blue;
+  }
+}
+
+.sessionTypeRadioContainer {
+  @apply grid gap-3 3xl:gap-6 grid-cols-3 content-center mt-1 text-sm;
+
+  input[type='radio'] {
+    @apply hidden;
+  }
+
+  .items {
+    @apply flex flex-col gap-4 p-4 text-left hover:bg-gray-lightest rounded-md hover:cursor-pointer;
+  }
+}
+
+.pdtTypeRadioContainer {
+  @apply grid gap-2.5 grid-cols-4 content-center mt-1 text-sm;
+
+  input[type='radio'] {
+    @apply hidden;
+  }
+
+  .items {
+    @apply flex flex-col gap-4 p-4 px-2 text-left hover:bg-gray-lightest rounded-md hover:cursor-pointer;
+  }
+}
+
+.colorCheckButtons {
+  @apply flex gap-10 w-full;
+
+  .items {
+    @apply flex flex-col cursor-pointer;
+  }
+
+  .radLabel {
+    @apply m-auto mb-2 p-0 text-center text-black-light text-xs;
+  }
+
+  .checkBorder {
+    @apply flex m-auto mb-1 w-10 h-10 rounded-full;
+    transition: all 0.05s ease-in;
+  }
+
+  .checkOption {
+    @apply w-[30px] h-[30px] m-auto rounded-full;
+  }
+
+  input[type='radio'] {
+    @apply w-0 h-0 opacity-0;
+  }
+
+  [type='radio']:checked + .checkBorder {
+    @apply border-2 border-blue-dark scale-110;
+  }
+}
+
+.toggle-wrapper {
+  margin: 0.5em auto;
+
+  @screen md {
+    width: 320px;
+  }
+
+  @screen lg {
+    width: 400px;
+  }
+}
+
+.togglesMulti {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .toggle-wrapper {
+      margin: 0.8em 0;
+      padding-left: 30px;
+      width: 35%;
+    }
+
+    .optional {
+      margin-right: 4.5em;
+      p {
+        @apply text-blue-dark;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .divide {
+    @apply border-b border-gray-light;
+    width: 98%;
+    margin: -14px auto auto;
+  }
+
+  .allSummaryToggleMulti {
+    .toggle-wrapper {
+      width: 85%;
+    }
+  }
+
+  .schedulingMulti {
+    .toggle-wrapper {
+      width: 40%;
+    }
+  }
+}
+
+.toggle-wrapper label {
+  padding: 0.3em;
+  display: block;
+}
+
+.toggleContainer {
+  @apply border-2 border-blue-dark;
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.toggleContainer .toggleOption {
+  @apply inline-block text-black-light;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  line-height: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.toggleContainer .toggleOption.selected {
+  color: #fff;
+}
+
+.toggleContainer .toggle {
+  @apply bg-blue-dark;
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+  border-radius: 15px;
+}
+
+.optionDisabled {
+  @apply !text-gray-light;
+  cursor: no-drop !important;
+}
+
+/* .toggleContainterMulti {
+  @apply w-full border-2 border-blue;
+  position: relative;
+  overflow: hidden;
+  border: none;
+
+  .toggle {
+    @apply bg-white border-b-4 border-blue-dark rounded-none;
+  }
+
+  .toggleOption {
+    @apply z-10 pb-3 text-black-light;
+  }
+
+  .toggleOption.selected {
+    @apply text-blue font-normal;
+  }
+} */
+
+.toggleWrapper {
+  @apply m-0 p-0 text-left text-sm font-normal space-y-2;
+
+  .labelWrapper {
+    @apply flex content-center items-center justify-start mt-4 font-normal;
+
+    .formLabel {
+      @apply flex-shrink-0 max-w-max text-left text-black text-sm font-normal;
+    }
+
+    .subClass {
+      @apply block flex-shrink-0 m-0 p-0 pl-2 max-w-max text-left text-black-lighter font-light;
+    }
+  }
+
+  .container {
+    @apply m-0 p-0 max-w-full;
+  }
+
+  .toggle-wrapper {
+    @apply ml-0 my-0 w-full border border-gray-light rounded-md;
+  }
+
+  .formToggle {
+    @apply p-1 w-full border border-gray-light rounded;
+
+    .toggle {
+      @apply border border-blue-dark rounded-none;
+    }
+
+    .toggleOption {
+      @apply self-center text-center font-light;
+    }
+  }
+
+  .regularToggle {
+    @apply px-1 py-2 w-full border border-gray-light rounded;
+
+    .toggle {
+      @apply !border-blue border rounded-none;
+    }
+
+    .toggleOption {
+      @apply self-center text-center font-light;
+    }
+  }
+
+  .optionDisabled {
+    cursor: no-drop !important;
+  }
+}
+
+.slideContainer {
+  .label {
+    @apply mb-4 text-black font-medium;
+  }
+
+  .rc-slider {
+    cursor: pointer;
+
+    .rc-slider-rail {
+      @apply h-3 bg-gray-light scale-y-75;
+    }
+
+    .rc-slider-track {
+      @apply h-3 bg-blue-dark transform scale-y-75;
+    }
+
+    .rc-slider-handle {
+      @apply w-6 h-6 border border-blue-dark;
+    }
+  }
+
+  .slider-range-text {
+    @apply flex justify-between mt-3 text-center text-black-light text-sm font-light;
+  }
+}
+
+.multiCheckOptionContainer {
+  @apply flex flex-col p-0 py-2 text-blue;
+
+  input {
+    @apply w-0 h-0 opacity-0;
+  }
+
+  .checkmark {
+    @apply mr-1.5 w-4 h-4 bg-white border border-gray rounded-sm;
+
+    &:hover {
+      background-color: #bbb;
+    }
+
+    &:after {
+      @apply m-auto w-full h-full bg-blue border-gray rounded-sm scale-75;
+      content: '';
+    }
+  }
+
+  input:checked ~ .checkmark {
+    @apply border border-blue;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+}
+
+.datePicker {
+  @apply text-left;
+
+  label {
+    @apply block mb-2 text-black-lighter text-sm;
+  }
+
+  .dateIconWrapper {
+    @apply max-w-[200px] flex content-center items-center p-0 text-black-light border-2 border-gray-light rounded-md overflow-hidden;
+
+    .dateIcon {
+      @apply justify-self-stretch m-0 mr-1 p-2 bg-blue;
+    }
+
+    .input {
+      @apply m-0 pl-1 w-full h-full border-none outline-none cursor-pointer;
+
+      &::placeholder {
+        font-weight: 300;
+      }
+    }
+
+    .input:disabled {
+      cursor: not-allowed;
+    }
+  }
+}

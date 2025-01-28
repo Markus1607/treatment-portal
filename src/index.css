@@ -1,0 +1,62 @@
+@import './assets/styles/global.css';
+@import './assets/styles/patientList.css';
+@import './assets/styles/formComponents.css';
+
+@tailwind base;
+
+@layer base {
+  /* rubik-300 - latin */
+  @font-face {
+    font-family: 'Rubik';
+    font-weight: 300;
+    font-display: swap;
+    src:
+      local('Rubik Light'),
+      local('Rubik-Light'),
+      url('./assets/fonts/rubik-v20-latin-300.woff2') format('woff2'),
+      url('./assets/fonts/rubik-v20-latin-300.woff') format('woff');
+  }
+
+  /* rubik-400 - latin */
+  @font-face {
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-display: swap;
+    src:
+      local('Rubik Regular'),
+      local('Rubik-Regular'),
+      url('./assets/fonts/rubik-v20-latin-400.woff2') format('woff2'),
+      url('./assets/fonts/rubik-v20-latin-400.woff') format('woff');
+  }
+
+  /* rubik-500 - latin */
+  @font-face {
+    font-family: 'Rubik';
+    font-weight: 500;
+    font-display: swap;
+    src:
+      local('Rubik SemiBold'),
+      local('Rubik-SemiBold'),
+      url('./assets/fonts/rubik-v20-latin-500.woff2') format('woff2'),
+      url('./assets/fonts/rubik-v20-latin-500.woff') format('woff');
+  }
+
+  /* rubik-600 - latin */
+  @font-face {
+    font-family: 'Rubik';
+    font-weight: 600;
+    font-display: swap;
+    src:
+      local('Rubik Bold'),
+      local('Rubik-Bold'),
+      url('./assets/fonts/rubik-v20-latin-600.woff2') format('woff2'),
+      url('./assets/fonts/rubik-v20-latin-600.woff') format('woff');
+  }
+}
+
+html {
+  @apply font-rubik;
+}
+
+@tailwind components;
+@tailwind utilities;

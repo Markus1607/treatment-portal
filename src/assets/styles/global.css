@@ -1,0 +1,277 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+icon-edit {
+  &:hover {
+    fill: #005392;
+  }
+}
+
+.icon-bin {
+  &:hover {
+    fill: #ec3d40;
+  }
+}
+
+.errorMessage {
+  @apply text-left text-warning text-xs lg:text-sm;
+}
+
+[div]:disabled,
+[input]:disabled {
+  pointer-events: none;
+}
+
+img {
+  aspect-ratio: attr(width) / attr(height);
+  image-rendering: -webkit-optimize-contrast;
+  pointer-events: none;
+}
+
+.menuToggle {
+  user-select: none;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    background: #303c45;
+    border-radius: 3px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    img {
+      image-rendering: auto;
+    }
+
+    .safari-password-reveal {
+      right: 2.5rem !important;
+    }
+  }
+}
+
+.menu-flags {
+  position: relative;
+  color: gray;
+  font-weight: 300;
+  align-self: center;
+  padding-bottom: 0 !important;
+
+  &::before {
+    display: none;
+    position: absolute;
+    content: '';
+    border-width: 10px;
+    width: 0px;
+    height: 0px;
+    top: 30px;
+    right: 4px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    color: #fff;
+  }
+
+  ul {
+    border: 1px solid #d9e4ee;
+    border-color: #d9e4ee;
+    border-radius: 5px;
+
+    li {
+      margin: 0 auto;
+      padding-left: 10px;
+      padding-right: 2px;
+    }
+  }
+
+  @screen lg {
+    svg {
+      width: 1.5em;
+    }
+  }
+
+  .menu-flags-button {
+    font-weight: 300;
+    color: gray;
+    border: none;
+    padding: 0px 4px;
+    min-width: 100%;
+
+    &:hover,
+    &:focus {
+      color: #1e477f;
+    }
+  }
+}
+
+.loader {
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.formInput {
+  @apply mt-1 px-3 py-3 w-full text-sm font-light bg-gray-lightest focus-visible:bg-white border rounded-md shadow-sm;
+
+  &:focus {
+    @apply outline-none;
+  }
+
+  @screen 2xl {
+    @apply py-4;
+  }
+}
+
+.formInput::-ms-reveal {
+  display: none;
+}
+
+.formLabel {
+  @apply block text-left text-black text-sm font-medium;
+
+  @screen 2xl {
+    @apply text-base;
+  }
+}
+
+.rm-checkbox {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 0;
+  cursor: pointer;
+  user-select: none;
+  max-width: fit-content;
+
+  &:hover {
+    .checkmark {
+      background-color: #e8f0fe;
+    }
+  }
+
+  input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: 1px solid #d9e4ee;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-right: 3px;
+
+    &:after {
+      margin: auto;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: #005392;
+      transform: scale(0.7);
+    }
+  }
+
+  input:checked ~ .checkmark {
+    border: 1px solid #d9e4ee;
+    border-radius: 4px;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+    border-radius: 4px;
+  }
+}
+
+.containerShadow {
+  @apply border border-gray-light rounded-md shadow-md;
+}
+
+.hideMenu {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.showMenu {
+  display: flex;
+  opacity: 1;
+  height: auto;
+  transition: all 0.6s ease-in;
+}
+
+.childrenContainer {
+  @apply w-full h-full max-h-screen bg-dashboard overflow-y-auto;
+
+  /*  @screen 3xl {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+  */
+}
+
+.hideScrollBar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+.fixedButtonContainer {
+  @apply z-[3] fixed bottom-0 flex items-center justify-between px-3 py-3 bg-white border-t border-gray-light;
+}
+
+.title {
+  text-decoration: underline;
+  text-decoration-color: #696f83;
+}
+
+.btn-with-flag {
+  @apply flex gap-4 items-center xl:gap-6;
+}
+
+.modal-image {
+  aspect-ratio: 1/1;
+}
+
+.pulse-circle {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1px 1px #0000001a;
+  background-color: tomato;
+}
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}

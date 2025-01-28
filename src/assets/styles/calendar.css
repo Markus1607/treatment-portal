@@ -1,0 +1,141 @@
+.schedule {
+  --border-color: #d9e4ee;
+
+  .rbc-calendar {
+    @apply 3xl:text-base text-sm;
+    border-color: var(--border-color);
+  }
+
+  .rbc-date-cell {
+    @apply text-black-light;
+  }
+
+  .rbc-header {
+    @apply text-right;
+    border-color: var(--border-color);
+  }
+
+  .rbc-date-cell.rbc-now.rbc-current {
+    @apply p-0 font-light;
+
+    a {
+      @apply m-0 pr-1 px-2 text-white bg-blue;
+    }
+  }
+
+  .react-datepicker-popper {
+    @apply z-10;
+  }
+
+  .react-datepicker__current-month,
+  .react-datepicker-time__header,
+  .react-datepicker-year-header {
+    @apply text-black;
+  }
+
+  .react-datepicker__header {
+    @apply bg-dashboard;
+  }
+
+  .react-datepicker__triangle {
+    @apply bg-dashboard;
+  }
+
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__month-text--keyboard-selected,
+  .react-datepicker__quarter-text--keyboard-selected,
+  .react-datepicker__year-text--keyboard-selected {
+    @apply text-white bg-blue;
+  }
+
+  .react-datepicker__navigation {
+    top: 11px;
+  }
+
+  .calendar-events {
+    width: 100%;
+    border: none;
+    padding: 0px;
+    overflow: visible !important;
+    height: 100%;
+    background-color: #f4f8fb;
+  }
+
+  .forecast-day {
+    @apply bg-dashboard;
+  }
+
+  .other-day {
+    @apply bg-white;
+  }
+
+  .rbc.row {
+    overflow: visible !important;
+  }
+
+  .rbc-month-view {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .rbc-header + .rbc-header {
+    border-left: none;
+  }
+
+  .rbc-month-row {
+    overflow: visible !important;
+  }
+
+  .rbc-month-row + .rbc-month-row {
+    border-color: var(--border-color);
+  }
+
+  .rbc-day-bg + .rbc-day-bg {
+    border-color: var(--border-color);
+  }
+
+  .rbc-row-segment {
+    overflow: visible;
+    height: 100%;
+  }
+
+  .rbc-event-content {
+    overflow: visible;
+    height: 100%;
+    min-width: 5.5rem;
+  }
+
+  .rbc-row-bg {
+    @apply bg-dashboard;
+  }
+
+  .rbc-date-cell {
+    @apply pr-[1px] m-0;
+
+    a {
+      @apply p-0.5 pl-1.5 3xl:text-sm text-xs font-normal bg-white border-b border-l border-gray-200;
+    }
+  }
+
+  .rbc-event:focus,
+  .rbc-day-slot .rbc-background-event:focus {
+    outline: none;
+  }
+
+  .rbc-row-bg {
+    &:first-child {
+      border-left: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+    }
+  }
+}
+
+.event-container-tooltip {
+  @apply !z-10 !bg-white !rounded-lg !opacity-100;
+  box-shadow: 15px 20px 40px rgba(155, 180, 200, 1);
+}
+
+.default-pdt-container-tooltip {
+  @apply !z-10 !bg-white !rounded-lg !opacity-100;
+  box-shadow: 15px 20px 40px rgba(155, 180, 200, 1);
+}

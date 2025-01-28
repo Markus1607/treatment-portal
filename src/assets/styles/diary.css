@@ -1,0 +1,66 @@
+.diary {
+  --border-color: #d9e4ee;
+
+  .rbc-calendar {
+    @apply text-sm;
+    border-color: var(--border-color);
+  }
+
+  .rbc-header {
+    @apply py-3 text-center bg-white border-b-0;
+    border-right: 1px solid var(--border-color);
+  }
+
+  .rbc-time-content {
+    @apply border-t overflow-x-hidden;
+  }
+
+  .rbc-allday-cell {
+    @apply hidden;
+  }
+
+  .rbc-header + .rbc-header {
+    border-left: none;
+  }
+
+  .rbc-timeslot-group {
+    @apply min-h-[101px];
+  }
+
+  .rbc-label {
+    padding-left: 40px;
+  }
+
+  /* Hacky styles to force the indicator to show througout */
+  .rbc-current-time-indicator {
+    @apply h-[2px] left-[-9999px] w-[99999px] z-10 bg-SmartPDTorange;
+  }
+
+  .rbc-day-bg + .rbc-day-bg {
+    border-color: var(--border-color);
+  }
+
+  .rbc-time-header-gutter {
+    @apply bg-white;
+  }
+
+  .rbc-event-label {
+    display: none;
+  }
+
+  .rbc-day-slot .rbc-events-container {
+    margin-right: 0px;
+  }
+
+  .diary-events {
+    &:hover {
+      border-bottom-width: 3px;
+      border-top-width: 3px;
+      border-right-width: 3px;
+    }
+  }
+
+  .rbc-time-gutter {
+    @apply bg-[#f4f8fb] z-[20];
+  }
+}

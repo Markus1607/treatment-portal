@@ -1,0 +1,18 @@
+image: node:16.13.2
+
+pipelines:
+  default:
+        - step:
+            name: Build & Test
+            caches:
+              - node
+            script:
+              - yarn install
+              - yarn test
+              - yarn run build
+              - apt update && apt install zip
+              - cd build
+              # Exclude files to be ignored
+              - zip -r portal-$BITBUCKET_BUILD_NUMBER.zip .
+            artifacts:
+              - "build/**"

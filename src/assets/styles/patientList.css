@@ -1,0 +1,161 @@
+.tableWrapper {
+  @apply pl-4 w-full h-full max-h-full min-h-full;
+}
+
+.tableLink {
+  @apply text-blue-lighter underline font-normal cursor-pointer;
+
+  &:hover {
+    @apply text-blue;
+  }
+}
+
+.table {
+  @apply mx-auto w-full h-full min-h-full text-left;
+
+  .tr {
+    @apply items-center last:border-0 border-b border-gray-light overflow-hidden;
+  }
+
+  .list-item {
+    &:hover {
+      @apply bg-gray-lightest cursor-pointer;
+    }
+  }
+
+  .list-item-cursor-normal {
+    &:hover {
+      @apply bg-gray-lightest;
+    }
+  }
+
+  .th,
+  .td {
+    @apply m-0 p-2 overflow-hidden;
+  }
+
+  .th {
+    @apply pt-4 text-black whitespace-nowrap bg-white border-b border-gray-light;
+  }
+
+  .td {
+    @apply text-black-light font-light;
+  }
+}
+
+.listTable {
+  .th {
+    @apply font-medium;
+  }
+}
+
+.sessionTable {
+  .th,
+  .td,
+  .tr {
+    @apply overflow-visible;
+  }
+
+  .tr {
+    @apply flex items-end;
+  }
+
+  .th {
+    @apply whitespace-pre-wrap;
+  }
+
+  .td {
+    font-weight: inherit;
+  }
+}
+
+.recordsTable {
+  .th {
+    @apply text-black-light font-light border-b;
+  }
+
+  .td {
+    @apply font-normal;
+  }
+}
+
+.diary-table {
+  .th {
+    @apply pl-5 font-medium;
+  }
+
+  .td {
+    @apply pl-5;
+  }
+
+  .list-wrapper {
+    @apply h-[76vh] 3xl:h-[82vh] overflow-y-auto;
+  }
+}
+
+.fixedListScrollBar {
+  /* Works on Chrome, Edge, and Safari */
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-[3px] bg-blue;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-gray-lightest;
+  }
+}
+
+.scrollBar {
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-[3px] bg-blue;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-gray-lightest;
+  }
+}
+
+.noScrollBar {
+  /* Works on Chrome, Edge, and Safari */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+.monitoringScrollBar {
+  @screen xl {
+    &::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    &::-webkit-scrollbar-track {
+      @apply bg-gray-lightest;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-[5.5px] bg-blue;
+      border: 3px solid transparent;
+      background-clip: content-box;
+    }
+  }
+}
+
+/* Firefox table height fix */
+@-moz-document url-prefix() {
+  .fire-height {
+    height: 800px;
+  }
+}
